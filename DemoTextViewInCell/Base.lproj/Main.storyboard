@@ -21,9 +21,25 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qn1-1T-jgQ">
                                 <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="IZ2-hh-tOn">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="132"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="8yP-VM-jTK">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="132"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="8yP-VM-jTK" firstAttribute="leading" secondItem="IZ2-hh-tOn" secondAttribute="leading" id="H9s-QU-Unc"/>
+                                        <constraint firstAttribute="trailing" secondItem="8yP-VM-jTK" secondAttribute="trailing" id="Nz1-Jq-PCP"/>
+                                        <constraint firstItem="8yP-VM-jTK" firstAttribute="top" secondItem="IZ2-hh-tOn" secondAttribute="top" id="csn-UY-NUP"/>
+                                        <constraint firstAttribute="bottom" secondItem="8yP-VM-jTK" secondAttribute="bottom" id="uTB-yO-4vF"/>
+                                    </constraints>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Message" rowHeight="110" id="lD1-l3-7tK" customClass="TextViewCell" customModule="DemoTextViewInCell" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="110"/>
+                                        <rect key="frame" x="0.0" y="160" width="320" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lD1-l3-7tK" id="cmv-oz-08i">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="109.5"/>
@@ -63,7 +79,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="gCO-6p-ZT2"/>
+                    <navigationItem key="navigationItem" id="gCO-6p-ZT2">
+                        <barButtonItem key="rightBarButtonItem" title="   +    " id="raq-fs-7Er">
+                            <connections>
+                                <action selector="addBtnAction:" destination="BYZ-38-t0r" id="eM4-hQ-nbf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Qn1-1T-jgQ" id="Sex-oO-NIe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -88,4 +113,7 @@
             <point key="canvasLocation" x="-330" y="134"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="sample" width="179" height="119"/>
+    </resources>
 </document>
